@@ -27,14 +27,12 @@
         header("location:teamformation.php?msg=Enter%20both%20order%20ID");
     else if($invoice1 == $invoice2)
         header("location:teamformation.php?msg=Same%20invoice%20number");
-    //else if($status1!="TXN_SUCCESS" && $status!="TXN_SUCCESS")
-            //header("location:teamformation.php?msg=Please%20check%20your%20pyment%20status");
+    else if($status1!="TXN_SUCCESS" && $status!="TXN_SUCCESS")
+            header("location:teamformation.php?msg=Please%20check%20your%20pyment%20status");
     else if($gp1=="" && $gp2=="")
         {
             $sql = "INSERT INTO event1(member1, member2) VALUES('$invoice1', '$invoice2')";
             mysqli_query($con, $sql);
-            $yes = "yes";
-            mysqli_query($con, "INSERT INTO events(event1, event2) VALUES('$yes', '')");
             header("location:teamformation.php?msg=Team%20formation%20Successful");
         }
     
