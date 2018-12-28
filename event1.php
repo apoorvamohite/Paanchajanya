@@ -3,13 +3,13 @@
     $invoice1 = $_POST['invoice1'];
     $invoice2 = $_POST['invoice2'];
 
-    $res3 = mysqli_query($con, "select * from transactions where orderID='$invoice'");
+    $res3 = mysqli_query($con, "select * from transactions where orderID='$invoice1'");
     $row3 = mysqli_fetch_assoc($res3);
-    $status1 = $row['status'];
+    $status1 = $row3['status'];
     
-    $res4 = mysqli_query($con, "select * from transactions where orderID='$invoice'");
+    $res4 = mysqli_query($con, "select * from transactions where orderID='$invoice2'");
     $row4 = mysqli_fetch_assoc($res3);
-    $status2 = $row['status'];
+    $status2 = $row4['status'];
 
     $check1 = "select groupid from event1 where member1=$invoice1";
     $res1 = mysqli_query($con, $check1);
