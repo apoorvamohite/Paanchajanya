@@ -87,7 +87,7 @@ if(!isset($_SESSION['admin'])){
 												</div>
 											</div>
 										</div>
-						
+										<input type="file" name="file">
 										<input type="submit" class="btn btn-info btn-fill pull-right" value="Add">
 										<div class="clearfix"></div>
 									</form>
