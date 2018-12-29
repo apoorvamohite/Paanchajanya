@@ -35,7 +35,7 @@
 			if($fileError === 0){
 				if($fileSize < 100000000){
 					$fileNameNew = uniqid('',true).'.'.$fileActualExt;
-					$fileDestination = 'upload/'.$fileNameNew;
+					$fileDestination = 'upload/'.$fileName;
 					move_uploaded_file($fileTmpName, $fileDestination);
 				}else{
 					echo "Your file is too big!";
@@ -47,7 +47,7 @@
 			echo "You cannot upload files of this type!";
 		}
 
-    $sql = "INSERT INTO notifiacations(description, file) VALUES('$desc', '$fileNameNew')";
+    $sql = "INSERT INTO notifiacations(description, file) VALUES('$desc', '$fileName')";
     mysqli_query($con, $sql);
 	header("Location: adminHome.php?success=true");
 	
