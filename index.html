@@ -127,12 +127,14 @@
       						
       		while($row = mysqli_fetch_assoc($res)){
 			echo "<h4>".$row['description']."</h4>";
-			echo "<div class=\"row\">";
-                        echo "<div class=\"col-md-10\">";
-			?>
-			<button class="btn btn-primary btn-round" type="button"><a href = "./upload/<?php echo $row['file']; ?>" download> click here </a></button>
-			<?php echo "</div>";
-			echo "</div>";
+			if($row['file'] != NULL){
+				echo "<div class=\"row\">";
+                        	echo "<div class=\"col-md-10\">";
+				?>
+				<button class="btn btn-primary btn-round" type="button"><a href = "./upload/<?php echo $row['file']; ?>" download> click here </a></button>
+				<?php echo "</div>";
+				echo "</div>";
+			}
                 }
 	 ?>
       </div>
