@@ -30,12 +30,12 @@
     else if($invoice2=="")
         {       
             if($status1!="TXN_SUCCESS")
-                header("location:IdeaPresentation.php?msg=Please%20check%20your%20pyment%20status");
+                header("location:IdeaPresentation.php?msg=Please%20check%20your%20payment%20status");
         }
     else if($invoice2!="")
         {       
             if($status1!="TXN_SUCCESS")
-                header("location:IdeaPresentation.php?msg=Please%20check%20your%20pyment%20status");
+                header("location:IdeaPresentation.php?msg=Please%20check%20your%20payment%20status");
         }
     else if($gp1=="" && $gp2=="")
         {
