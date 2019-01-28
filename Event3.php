@@ -19,7 +19,7 @@
     if($invoice1=="")
         header("location:BlindCoding.php?msg=Enter%20order%20ID");
     else if($status1!="TXN_SUCCESS")
-            header("location:BlindCoding.php?msg=Please%20check%20your%20pyment%20status");
+            header("location:BlindCoding.php?msg=Please%20check%20your%20payment%20status");
     else if($gp1=="")
         {
             $sql = "INSERT INTO event3(member1) VALUES('$invoice1')";
