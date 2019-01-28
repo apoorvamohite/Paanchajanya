@@ -82,17 +82,17 @@
     else if($invoice5=="" && $invoioce6=="")
         {
             if($status1!="TXN_SUCCESS" && $status2!="TXN_SUCCESS" && $status3!="TXN_SUCCESS" && $status4!="TXN_SUCCESS")
-                header("location:TreasureHunt.php?msg=Please%20check%20your%20pyment%20status");
+                header("location:TreasureHunt.php?msg=Please%20check%20your%20payment%20status");
         }
     else if($invoice5!="")
         {
             if($status1!="TXN_SUCCESS" && $status2!="TXN_SUCCESS" && $status3!="TXN_SUCCESS" && $status4!="TXN_SUCCESS" && $status5!="TXN_SUCCESS")
-                header("location:TreasureHunt.php?msg=Please%20check%20your%20pyment%20status");
+                header("location:TreasureHunt.php?msg=Please%20check%20your%20payment%20status");
         }
     else if($invoice6!="")
         {
             if($status1!="TXN_SUCCESS" && $status2!="TXN_SUCCESS" && $status3!="TXN_SUCCESS" && $status4!="TXN_SUCCESS" && $status5!="TXN_SUCCESS" && $status6!="TXN_SUCCESS")
-                header("location:TreasureHunt.php?msg=Please%20check%20your%20pyment%20status");
+                header("location:TreasureHunt.php?msg=Please%20check%20your%20payment%20status");
         }
     else if($gp1=="" && $gp2=="" && $gp3=="" && $gp4=="" && $gp5=="" && $gp6=="")
         {
