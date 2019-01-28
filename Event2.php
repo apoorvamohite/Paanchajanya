@@ -28,7 +28,7 @@
     else if($invoice1 == $invoice2)
         header("location:LaserMazer.php?msg=Same%20invoice%20number");
     else if($status1!="TXN_SUCCESS" && $status!="TXN_SUCCESS")
-            header("location:LaserMazer.php?msg=Please%20check%20your%20pyment%20status");
+            header("location:LaserMazer.php?msg=Please%20check%20your%20payment%20status");
     else if($gp1=="" && $gp2=="")
         {
             $sql = "INSERT INTO event2(member1, member2) VALUES('$invoice1', '$invoice2')";
