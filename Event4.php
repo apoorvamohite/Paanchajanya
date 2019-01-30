@@ -9,7 +9,7 @@
 
     //Retrieving transaction status.
 
-    /*$res1 = mysqli_query($con, "select * from transactions where orderID='$invoice1'");
+    $res1 = mysqli_query($con, "select * from transactions where orderID='$invoice1'");
     $row1 = mysqli_fetch_assoc($res1);
     $status1 = $row1['status'];
     
@@ -31,7 +31,7 @@
         
     $res6 = mysqli_query($con, "select * from transactions where orderID='$invoice6'");
     $row6 = mysqli_fetch_assoc($res6);
-    $status6 = $row6['status'];*/
+    $status6 = $row6['status'];
 
     //Checking whether team or team member already exists.
 
@@ -79,7 +79,7 @@
     else if($invoice5 == $invoice6)
         header("location:TreasureHunt.php?msg=Please%20enter%20distinct%20number");
 
-    /*else if($invoice5=="" && $invoioce6=="")
+    else if($invoice5=="" && $invoioce6=="")
         {
             if($status1!="TXN_SUCCESS" && $status2!="TXN_SUCCESS" && $status3!="TXN_SUCCESS" && $status4!="TXN_SUCCESS")
                 header("location:TreasureHunt.php?msg=Please%20check%20your%20pyment%20status");
@@ -93,7 +93,7 @@
         {
             if($status1!="TXN_SUCCESS" && $status2!="TXN_SUCCESS" && $status3!="TXN_SUCCESS" && $status4!="TXN_SUCCESS" && $status5!="TXN_SUCCESS" && $status6!="TXN_SUCCESS")
                 header("location:TreasureHunt.php?msg=Please%20check%20your%20pyment%20status");
-        }*/
+        }
     else if($gp1=="" && $gp2=="" && $gp3=="" && $gp4=="" && $gp5=="" && $gp6=="")
         {
             $sql = "INSERT INTO event4(member1, member2, member3, member4, member5, member6) VALUES('$invoice1', '$invoice2', '$invoice3', '$invoice4', '$invoice5', '$invoice6')";
