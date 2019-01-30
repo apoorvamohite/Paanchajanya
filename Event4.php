@@ -35,7 +35,7 @@
 
     //Checking whether team or team member already exists.
 
-    $check1 = "select groupid from event5 where member1=$invoice1";
+    $check1 = "select groupid from event5 where member1='$invoice1' or member2='$invoice1' or member3='$invoice1' or member4='$invoice1' member5='$invoice1' or member6='$invoice1'";
     $result1 = mysqli_query($con, $check1);
     $row1a = mysqli_fetch_assoc($result1);
     $gp1 = $row1a['groupid'];
@@ -53,7 +53,7 @@
     $check4 = "select groupid from event5 where member1=$invoice4";
     $result4 = mysqli_query($con, $check4);
     $row4a = mysqli_fetch_assoc($result4);
-    $gp4 = $row1a['groupid'];
+    $gp4 = $row4a['groupid'];
 
     $check5 = "select groupid from event5 where member1=$invoice5";
     $result5 = mysqli_query($con, $check5);
