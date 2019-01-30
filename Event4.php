@@ -9,7 +9,7 @@
 
     //Retrieving transaction status.
 
-    $res1 = mysqli_query($con, "select * from transactions where orderID='$invoice1'");
+    /*$res1 = mysqli_query($con, "select * from transactions where orderID='$invoice1'");
     $row1 = mysqli_fetch_assoc($res1);
     $status1 = $row1['status'];
     
@@ -31,36 +31,36 @@
         
     $res6 = mysqli_query($con, "select * from transactions where orderID='$invoice6'");
     $row6 = mysqli_fetch_assoc($res6);
-    $status6 = $row6['status'];
+    $status6 = $row6['status'];*/
 
     //Checking whether team or team member already exists.
 
-    $check1 = "select groupid from event5 where member1='$invoice1' or member2='$invoice1' or member3='$invoice1' or member4='$invoice1' member5='$invoice1' or member6='$invoice1'";
+    $check1 = "select groupid from event4 where member1='$invoice1' or member2='$invoice1' or member3='$invoice1' or member4='$invoice1' or member5='$invoice1' or member6='$invoice1'";
     $result1 = mysqli_query($con, $check1);
     $row1a = mysqli_fetch_assoc($result1);
     $gp1 = $row1a['groupid'];
 
-    $check2 = "select groupid from event5 where member2=$invoice2";
+    $check2 = "select groupid from event4 where member1='$invoice2' or member2='$invoice2' or member3='$invoice2' or member4='$invoice2' or member5='$invoice2' or member6='$invoice2'";
     $result2 = mysqli_query($con, $check2);
     $row2a = mysqli_fetch_assoc($result2);
     $gp2 = $row2a['groupid'];
 
-    $check3 = "select groupid from event5 where member2=$invoice3";
+    $check3 = "select groupid from event4 where member1='$invoice3' or member2='$invoice3' or member3='$invoice3' or member4='$invoice3' or member5='$invoice3' or member6='$invoice3'";
     $result3 = mysqli_query($con, $check3);
     $row3a = mysqli_fetch_assoc($result3);
     $gp3 = $row3a['groupid'];
 
-    $check4 = "select groupid from event5 where member1=$invoice4";
+    $check4 = "select groupid from event4 where member1='$invoice4' or member2='$invoice4' or member3='$invoice4' or member4='$invoice4' or member5='$invoice4' or member6='$invoice4'";
     $result4 = mysqli_query($con, $check4);
     $row4a = mysqli_fetch_assoc($result4);
     $gp4 = $row4a['groupid'];
 
-    $check5 = "select groupid from event5 where member1=$invoice5";
+    $check5 = "select groupid from event4 where member1='$invoice5' or member2='$invoice5' or member3='$invoice5' or member4='$invoice5' or member5='$invoice5' or member6='$invoice5'";
     $result5 = mysqli_query($con, $check5);
     $row5a = mysqli_fetch_assoc($result5);
     $gp5 = $row5a['groupid'];
 
-    $check6 = "select groupid from event5 where member1=$invoice6";
+    $check6 = "select groupid from event4 where member1='$invoice6' or member2='$invoice6' or member3='$invoice6' or member4='$invoice6' or member5='$invoice6' or member6='$invoice6'";
     $result6 = mysqli_query($con, $check6);
     $row6a = mysqli_fetch_assoc($result6);
     $gp6 = $row6a['groupid'];
@@ -79,21 +79,21 @@
     else if($invoice5 == $invoice6)
         header("location:TreasureHunt.php?msg=Please%20enter%20distinct%20number");
 
-    else if($invoice5=="" && $invoioce6=="")
+    /*else if($invoice5=="" && $invoioce6=="")
         {
             if($status1!="TXN_SUCCESS" && $status2!="TXN_SUCCESS" && $status3!="TXN_SUCCESS" && $status4!="TXN_SUCCESS")
-                header("location:TreasureHunt.php?msg=Please%20check%20your%20payment%20status");
+                header("location:TreasureHunt.php?msg=Please%20check%20your%20pyment%20status");
         }
     else if($invoice5!="")
         {
             if($status1!="TXN_SUCCESS" && $status2!="TXN_SUCCESS" && $status3!="TXN_SUCCESS" && $status4!="TXN_SUCCESS" && $status5!="TXN_SUCCESS")
-                header("location:TreasureHunt.php?msg=Please%20check%20your%20payment%20status");
+                header("location:TreasureHunt.php?msg=Please%20check%20your%20pyment%20status");
         }
     else if($invoice6!="")
         {
             if($status1!="TXN_SUCCESS" && $status2!="TXN_SUCCESS" && $status3!="TXN_SUCCESS" && $status4!="TXN_SUCCESS" && $status5!="TXN_SUCCESS" && $status6!="TXN_SUCCESS")
-                header("location:TreasureHunt.php?msg=Please%20check%20your%20payment%20status");
-        }
+                header("location:TreasureHunt.php?msg=Please%20check%20your%20pyment%20status");
+        }*/
     else if($gp1=="" && $gp2=="" && $gp3=="" && $gp4=="" && $gp5=="" && $gp6=="")
         {
             $sql = "INSERT INTO event4(member1, member2, member3, member4, member5, member6) VALUES('$invoice1', '$invoice2', '$invoice3', '$invoice4', '$invoice5', '$invoice6')";
