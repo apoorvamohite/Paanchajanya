@@ -4,21 +4,21 @@
     $invoice2 = $_POST['invoice2'];
 
     $res1 = mysqli_query($con, "select * from transactions where orderID='$invoice1'");
-    $row1 = mysqli_fetch_assoc($res3);
+    $row1 = mysqli_fetch_assoc($res1);
     $status1 = $row1['status'];
     
     $res2 = mysqli_query($con, "select * from transactions where orderID='$invoice2'");
-    $row2 = mysqli_fetch_assoc($res3);
+    $row2 = mysqli_fetch_assoc($res2);
     $status2 = $row2['status'];
 
-    $check1 = "select groupid from event6 where member1=$invoice1";
+    $check1 = "select groupid from event6 where member1='$invoice1' or member2='$invoice1'";
     $res3 = mysqli_query($con, $check1);
-    $row3 = mysqli_fetch_assoc($res1);
+    $row3 = mysqli_fetch_assoc($res3);
     $gp1 = $row3['groupid'];
 
-    $check2 = "select groupid from event6 where member2=$invoice2";
+    $check2 = "select groupid from event6 where member1='$invoice2' or member2='$invoice2'";
     $res4 = mysqli_query($con, $check2);
-    $row4 = mysqli_fetch_assoc($res2);
+    $row4 = mysqli_fetch_assoc($res4);
     $gp2 = $row4['groupid'];
 
     
@@ -30,12 +30,12 @@
     else if($invoice2=="")
         {       
             if($status1!="TXN_SUCCESS")
-                header("location:IdeaPresentation.php?msg=Please%20check%20your%20payment%20status");
+                header("location:IdeaPresentation.php?msg=Please%20check%20your%20pyment%20status");
         }
     else if($invoice2!="")
         {       
-            if($status1!="TXN_SUCCESS")
-                header("location:IdeaPresentation.php?msg=Please%20check%20your%20payment%20status");
+            if($status1!="TXN_SUCCESS" && $status2!="TXN_SUCCESS")
+                header("location:IdeaPresentation.php?msg=Please%20check%20your%20pyment%20status");
         }
     else if($gp1=="" && $gp2=="")
         {
@@ -45,7 +45,7 @@
         }
     
      else
-            header("location:IdeaPresentation.php?msg=Team%20or%20member%20already%20exists");
+            header("location:IdeaPresentation.php?msg=Team%20or%20member%20already%20registered");
     
     
 ?>
